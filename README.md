@@ -1,24 +1,33 @@
-# README
+# PassCheck
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PassCheck checks a submitted password against the wordlists in
+`data/wordlists/`. The wordlists are bundled with the application and are not
+served as public assets.
 
-Things you may want to cover:
+## Development
 
-* Ruby version
+Install the dependencies and start Rails:
 
-* System dependencies
+```sh
+bin/setup
+bin/rails server
+```
 
-* Configuration
+Run the test suite with:
 
-* Database creation
+```sh
+bin/rails test
+```
 
-* Database initialization
+## Deployment
 
-* How to run the test suite
+The production Docker image includes the tracked wordlists. Puma already reads
+the listening port from `PORT`, so container platforms can provide their
+assigned port at runtime.
 
-* Services (job queues, cache servers, search engines, etc.)
+PassCheck does not persist password checks. If persistence is added later, use
+an external database rather than relying on the local SQLite file in a
+serverless or container deployment.
 
-* Deployment instructions
-
-* ...
+Before publishing a deployment, review [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
+and confirm the redistribution terms for the exact wordlist files.
