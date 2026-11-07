@@ -8,3 +8,345 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0b1020;
+  color: #e8ecf5;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.passcheck-page {
+  min-height: 100vh;
+}
+
+.navbar {
+  height: 76px;
+  padding: 0 8%;
+  border-bottom: 1px solid #202a40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f4f6fb;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #6978f5;
+  color: white;
+}
+
+.nav-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #8995ad;
+}
+
+.main-content {
+  width: min(680px, 92%);
+  margin: 75px auto 0;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.eyebrow {
+  color: #9ba8ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #66d9a4;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 7vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  margin: 22px 0 16px;
+}
+
+.hero h1 span {
+  color: #8792ff;
+}
+
+.hero-description {
+  color: #9ca8bd;
+  line-height: 1.7;
+  max-width: 490px;
+  margin: auto;
+  font-size: 15px;
+}
+
+.checker-card {
+  background: #141d30;
+  border: 1px solid #293650;
+  border-radius: 18px;
+  padding: 32px;
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.card-heading h2 {
+  font-size: 21px;
+  margin: 0 0 7px;
+}
+
+.card-heading p {
+  color: #929fb5;
+  font-size: 13px;
+  margin: 0;
+}
+
+.lock-icon {
+  font-size: 24px;
+}
+
+.input-section label,
+.strength-heading {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #a7b3c9;
+}
+
+.password-input-wrapper {
+  display: flex;
+  margin-top: 12px;
+  background: #0d1526;
+  border: 1px solid #34415b;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.password-input-wrapper:focus-within {
+  border-color: #8792ff;
+}
+
+.password-input-wrapper input {
+  flex: 1;
+  min-width: 0;
+  padding: 16px;
+  color: white;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-size: 15px;
+}
+
+.password-input-wrapper input::placeholder {
+  color: #68758d;
+}
+
+.toggle-password {
+  padding: 0 18px;
+  background: transparent;
+  color: #a5adff;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.privacy-note {
+  color: #8491a9;
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+.strength-section {
+  margin-top: 32px;
+}
+
+.strength-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.strength-label {
+  color: #8e9ab0;
+}
+
+.strength-meter {
+  display: flex;
+  gap: 7px;
+}
+
+.strength-meter span {
+  height: 7px;
+  flex: 1;
+  background: #303b50;
+  border-radius: 20px;
+}
+
+.strength-meter.weak span:nth-child(-n+1) {
+  background: #ef626c;
+}
+
+.strength-meter.fair span:nth-child(-n+2) {
+  background: #f1b65e;
+}
+
+.strength-meter.good span:nth-child(-n+3) {
+  background: #64c9a0;
+}
+
+.strength-meter.strong span {
+  background: #64d6a5;
+}
+
+.requirements-section {
+  border-top: 1px solid #293650;
+  margin-top: 30px;
+  padding-top: 24px;
+}
+
+.requirements-section h3,
+.result-section h3,
+.info-section h3 {
+  font-size: 14px;
+  margin: 0 0 17px;
+}
+
+.requirement-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.requirement {
+  font-size: 12px;
+  color: #8996ac;
+}
+
+.requirement-icon {
+  display: inline-block;
+  margin-right: 7px;
+  color: #748199;
+}
+
+.requirement.valid {
+  color: #70d5a8;
+}
+
+.requirement.valid .requirement-icon {
+  color: #70d5a8;
+}
+
+.result-section {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #1d2940;
+}
+
+.result-section p {
+  color: #a9b6ca;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.clear-button {
+  width: 100%;
+  margin-top: 28px;
+  padding: 14px;
+  border: 1px solid #3b4965;
+  border-radius: 9px;
+  background: transparent;
+  color: #d5dbea;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  background: #202c43;
+}
+
+.info-section {
+  display: flex;
+  gap: 15px;
+  margin-top: 26px;
+  padding: 22px;
+  background: #111a2b;
+  border: 1px solid #25334a;
+  border-radius: 13px;
+}
+
+.info-icon {
+  font-size: 21px;
+  color: #8e9bff;
+}
+
+.info-section h3 {
+  margin-bottom: 8px;
+}
+
+.info-section p {
+  color: #929fb5;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 35px 0;
+  color: #748199;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+@media (max-width: 520px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-label {
+    font-size: 9px;
+  }
+
+  .main-content {
+    margin-top: 48px;
+  }
+
+  .checker-card {
+    padding: 22px 17px;
+  }
+
+  .requirement-list {
+    grid-template-columns: 1fr;
+  }
+}

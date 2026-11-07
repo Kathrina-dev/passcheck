@@ -1,0 +1,124 @@
+
+<div class="passcheck-page" data-controller="password-check">
+  <nav class="navbar">
+    <a href="/" class="brand">
+      PassCheck
+    </a>
+  </nav>
+
+  <main class="main-content">
+    <section class="hero">
+      <h1>
+        Is your password<br>
+        <span>strong enough?</span>
+      </h1>
+
+      <p class="hero-description">
+        With all of the recent cyberattacks in Black October 2026, I felt it was necessary to create a password strength checker for people to realise that they could be endangering their accounts with a small, or frequently used, crackable password.
+      </p>
+    </section>
+
+    <section class="checker-card">
+      <div class="input-section">
+        <label for="password">Enter a password below to analyze its strength.</label>
+
+        <div class="password-input-wrapper">
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter a password..."
+            autocomplete="new-password"
+            spellcheck="false"
+            data-password-check-target="input"
+            data-action="input->password-check#check"
+          >
+
+          <button
+            type="button"
+            class="toggle-password"
+            data-action="click->password-check#toggleVisibility"
+            data-password-check-target="toggle"
+            aria-label="Show password"
+          >
+            Show
+          </button>
+        </div>
+
+        <p class="privacy-note">
+          Your password is analyzed locally in your browser.
+          It is not submitted or stored.
+        </p>
+      </div>
+
+      <div class="strength-section">
+        <div class="strength-heading">
+          <span>STRENGTH LEVEL</span>
+
+          <span
+            class="strength-label"
+            data-password-check-target="label"
+            aria-live="polite"
+          >
+            Waiting for input
+          </span>
+        </div>
+
+        <div class="strength-meter" data-password-check-target="meter">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="requirements-section">
+        <h3>Password requirements</h3>
+
+        <div class="requirement-list">
+          <div class="requirement" data-password-check-target="length">
+            <span class="requirement-icon">○</span>
+            At least 12 characters
+          </div>
+
+          <div class="requirement" data-password-check-target="lowercase">
+            <span class="requirement-icon">○</span>
+            Lowercase letters
+          </div>
+
+          <div class="requirement" data-password-check-target="uppercase">
+            <span class="requirement-icon">○</span>
+            Uppercase letters
+          </div>
+
+          <div class="requirement" data-password-check-target="number">
+            <span class="requirement-icon">○</span>
+            At least one number
+          </div>
+
+          <div class="requirement" data-password-check-target="symbol">
+            <span class="requirement-icon">○</span>
+            Special characters
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="result-section"
+        data-password-check-target="result"
+        aria-live="polite"
+        hidden
+      >
+        <h3>Analysis result</h3>
+        <h3 data-password-check-target="message"><h3>
+      </div>
+
+      <button
+        type="button"
+        class="clear-button"
+        data-action="click->password-check#clear"
+      >
+        Clear password
+      </button>
+    </section>
+  </main>
+</div>
